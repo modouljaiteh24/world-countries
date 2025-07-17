@@ -68,8 +68,8 @@ function App() {
 
   return (
     <>
-      <header>
-        <div className="header-container">
+      <header className="z-10 shadow-gray-800 shadow-2xl">
+        <div className="header-container bg-gray-50">
           <h1 className=" font-bold">Where in the world?</h1>
 
           <div onClick={handleToggleTheme}>
