@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import LoaderComponent from "./LoaderComponent";
 
 function App() {
   const [country, setCountry] = useState([]);
@@ -69,7 +70,7 @@ function App() {
     <>
       <header>
         <div className="header-container">
-          <h1>Where in the world?</h1>
+          <h1 className=" font-bold">Where in the world?</h1>
 
           <div onClick={handleToggleTheme}>
             <span className="dark-mode-toggler">
@@ -125,7 +126,7 @@ function App() {
         {/* Country Cards */}
         <div className="countries">
           {isloading ? (
-            <span className="text-2xl loader"></span>
+            <LoaderComponent />
           ) : filteredCountries.length === 0 ? (
             <p>No countries match your search.</p>
           ) : (
