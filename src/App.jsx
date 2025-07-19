@@ -15,7 +15,7 @@ function App() {
     "Americas",
     "Asia",
     "Europe",
-    "Oceania", // ✅ Fixed spelling
+    "Oceania",
   ];
 
   // Theme toggle
@@ -29,7 +29,7 @@ function App() {
     setTheme(!theme);
   };
 
-  // Fetch countries on load
+  // Fetch countries
   const fetchCountry = async () => {
     const response = await fetch(
       "https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags"
@@ -69,12 +69,12 @@ function App() {
   return (
     <>
       <header className="z-10 shadow-gray-800 shadow-2xl">
-        <div className="header-container bg-gray-50">
+        <div className="header-container">
           <h1 className=" font-bold">Where in the world?</h1>
 
           <div onClick={handleToggleTheme}>
             <span className="dark-mode-toggler">
-              {theme ? "🌙 Dark Mode" : "☀️ Light Mode"}
+              {theme ? "☀️ Light Mode " : "🌙 Dark Mode"}
             </span>
           </div>
         </div>
@@ -140,7 +140,7 @@ function App() {
                   />
                 </div>
                 <div className="card-body">
-                  <h2>{country.name.common}</h2>
+                  <h2 className="font-bold">{country.name.common}</h2>
                   <ul className="country-info">
                     <li className="country-info-content-wrapper">
                       <strong>Population:</strong>{" "}
